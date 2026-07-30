@@ -59,7 +59,7 @@ html {
 img {
   display: block;
   width: 100%;
-  margin: auto;
+    height: auto;
 }
 
 .container {
@@ -84,7 +84,7 @@ color: #1d1d1d;
 
 header {
   padding-top: 30px;
-  height: 500px;
+  height: 450px;
 
   .container {
     height: 100%;
@@ -123,11 +123,13 @@ header {
 
   h1 {
     font-size: 40px;
+    text-align: center;
   }
 
   p {
     font-size: 25px;
     margin-top: 20px;
+    text-align: center;
   }
 }
 
@@ -197,7 +199,7 @@ section{
 
     background: #D9D9D9;
     border: 1px solid #000;
-    z-index: 1;
+    z-index: 1
   }
 
   // メイン画像
@@ -207,10 +209,19 @@ section{
     width: 400px;
     height: 300px;
 
-    background: #bfbfbf;
+  
     border: 1px solid #000;
 
     z-index: 2;
+          &.hp-img{
+        background-image: url(../img/hp1.png);
+      }
+      &.lp-img{
+        background-image: url(../img/lp1.png);
+      }
+      &.others-img{
+        background-image: url(../img/rogo.png);
+      }
   }
 
   // VIEW MOREボタン
@@ -236,6 +247,10 @@ section{
 }
 
 .profile{
+  .container {
+      .profile-img{
+    max-width: 500px;
+  }
  .flex-profile {
   display: flex;
   flex-direction: column;
@@ -266,6 +281,7 @@ section{
 .text.name {
   font-size: 20px;
 }
+  }
 }
 
 .message {
@@ -280,14 +296,17 @@ section{
       width: fit-content; // 内容の幅だけにする
     }
 
-    .img {
-      width: 500px;
-      height: 300px;
+    .illustration {
+      max-width: 600px;
     }
   }
 }
 
 .hobby{
+  .hobby-img{
+    width: 450px;
+    height: auto;
+  }
   .hobby-text {
   display: flex;
   flex-direction: column;
@@ -325,8 +344,8 @@ section{
 
   header {
     height: auto;
-    min-height: 100vh;
     padding-top: 90px;
+    padding-bottom: 30px;
 
     h1 {
       font-size: 26px; // ←折り返さない程度まで縮小
@@ -373,7 +392,9 @@ section{
       gap: 0px;
     }
     }
-
+    .illustration{
+      margin-top: 30px;
+    }
   }
 
   /* ----------------
@@ -433,7 +454,9 @@ section{
   ---------------- */
 
   .hobby {
-
+.hobby-img{
+    width: 90vw;
+  }
     .flex {
       flex-direction: column;
       gap: 40px;

@@ -40,7 +40,7 @@ html {
 img {
   display: block;
   width: 100%;
-  margin: auto;
+  height: auto;
 }
 
 .container {
@@ -65,7 +65,7 @@ a {
 
 header {
   padding-top: 30px;
-  height: 500px;
+  height: 450px;
 }
 header .container {
   height: 100%;
@@ -101,10 +101,12 @@ header .hero-text {
 }
 header h1 {
   font-size: 40px;
+  text-align: center;
 }
 header p {
   font-size: 25px;
   margin-top: 20px;
+  text-align: center;
 }
 
 section {
@@ -172,9 +174,17 @@ section p {
   position: absolute;
   width: 400px;
   height: 300px;
-  background: #bfbfbf;
   border: 1px solid #000;
   z-index: 2;
+}
+.works .image.hp-img {
+  background-image: url(../img/hp1.png);
+}
+.works .image.lp-img {
+  background-image: url(../img/lp1.png);
+}
+.works .image.others-img {
+  background-image: url(../img/rogo.png);
 }
 .works .label {
   position: absolute;
@@ -191,30 +201,33 @@ section p {
   z-index: 3;
 }
 
-.profile .flex-profile {
+.profile .container .profile-img {
+  max-width: 500px;
+}
+.profile .container .flex-profile {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.profile .profile-item {
+.profile .container .profile-item {
   display: grid;
   grid-template-columns: 100px 1fr;
   -moz-column-gap: 30px;
        column-gap: 30px;
   align-items: baseline;
 }
-.profile .title {
+.profile .container .title {
   font-size: 18px;
   font-weight: bold;
 }
-.profile .title.large {
+.profile .container .title.large {
   font-size: 20px;
 }
-.profile .text {
+.profile .container .text {
   font-size: 18px;
   line-height: 1.8;
 }
-.profile .text.name {
+.profile .container .text.name {
   font-size: 20px;
 }
 
@@ -229,11 +242,14 @@ section p {
   width: -moz-fit-content;
   width: fit-content;
 }
-.message .container .img {
-  width: 500px;
-  height: 300px;
+.message .container .illustration {
+  max-width: 600px;
 }
 
+.hobby .hobby-img {
+  width: 450px;
+  height: auto;
+}
 .hobby .hobby-text {
   display: flex;
   flex-direction: column;
@@ -262,8 +278,8 @@ section p {
   ---------------- */
   header {
     height: auto;
-    min-height: 100vh;
     padding-top: 90px;
+    padding-bottom: 30px;
   }
   header h1 {
     font-size: 26px;
@@ -297,6 +313,9 @@ section p {
   .message .container .flex {
     flex-direction: column;
     gap: 0px;
+  }
+  .message .illustration {
+    margin-top: 30px;
   }
   /* ----------------
       PROFILE
@@ -338,6 +357,9 @@ section p {
   /* ----------------
       HOBBY
   ---------------- */
+  .hobby .hobby-img {
+    width: 90vw;
+  }
   .hobby .flex {
     flex-direction: column;
     gap: 40px;

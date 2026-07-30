@@ -1,6 +1,54 @@
 /* デフォルト */
 @charset "utf-8";
 
+/* レスポンシブ設定 */
+
+$breakpoints: (
+  "ssp": "screen and (max-width:320px)",
+  "sp": "screen and (max-width:540px)",
+  "tb": "screen and (max-width:768px)",
+  "mb": "screen and (max-width:900px)",
+  "nb": "screen and (max-width:1024px)",
+  "np": "screen and (max-width:1440px)"
+) !default;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@mixin pc($breakpoint: nb) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@media screen and (min-width: 321px) {
+  .ssp {
+    display: none;
+  }
+}
+@media screen and (min-width: 541px) {
+  .sp {
+    display: none;
+  }
+}
+@media screen and (max-width: 540px) {
+  .pc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .tb {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nb {
+    display: none;
+  }
+}
+
 body{
   background-color: #F6F6F6;
 }
@@ -110,4 +158,79 @@ header {
 
 img{
   max-width: 450px;
+}
+
+@include pc(sp) {
+
+  /* ヘッダー */
+  header {
+    padding-top: 100px;
+    height: auto;
+    padding-bottom: 0px;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .page-nav {
+    width: calc(100% - 40px);
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    a {
+      flex: 1;
+      text-align: center;
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+
+  .contents {
+    padding: 25px;
+    /* 追加 */
+    .flex {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .work-item {
+      width: 100%;
+      .title{
+        font-size: 27px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+          .tag{
+        font-size: 13px;
+        padding: 3px 10px;
+        margin-bottom: 50px;
+      }
+        .info-item {
+        grid-template-columns: 50px 1fr;
+        column-gap: 50px;
+        align-items: baseline;
+        .text {
+  line-height: 1.5;
+}
+      }
+    }
+  }
+
 }

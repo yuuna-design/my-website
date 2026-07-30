@@ -1,5 +1,35 @@
 @charset "UTF-8";
 /* デフォルト */
+/* レスポンシブ設定 */
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 321px) {
+  .ssp {
+    display: none;
+  }
+}
+@media screen and (min-width: 541px) {
+  .sp {
+    display: none;
+  }
+}
+@media screen and (max-width: 540px) {
+  .pc {
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) {
+  .tb {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nb {
+    display: none;
+  }
+}
 body {
   background-color: #F6F6F6;
 }
@@ -99,4 +129,70 @@ header h1 {
 
 img {
   max-width: 450px;
+}
+
+@media screen and (max-width:540px) {
+  /* ヘッダー */
+  header {
+    padding-top: 100px;
+    height: auto;
+    padding-bottom: 0px;
+  }
+  header h1 {
+    font-size: 30px;
+  }
+  section {
+    padding: 40px 0;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .page-nav {
+    width: calc(100% - 40px);
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .page-nav a {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+  }
+  .contents {
+    padding: 25px;
+    /* 追加 */
+  }
+  .contents .flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contents img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .contents .work-item {
+    width: 100%;
+  }
+  .contents .work-item .title {
+    font-size: 27px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .contents .work-item .tag {
+    font-size: 13px;
+    padding: 3px 10px;
+    margin-bottom: 50px;
+  }
+  .contents .work-item .info-item {
+    grid-template-columns: 50px 1fr;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+    align-items: baseline;
+  }
+  .contents .work-item .info-item .text {
+    line-height: 1.5;
+  }
 }/*# sourceMappingURL=style.css.map */
